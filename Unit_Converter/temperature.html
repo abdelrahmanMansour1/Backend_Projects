@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Unit Converter</h2>
+      <div class="tabs">
+        <a href="length.html" class="tab">Length</a>
+        <a href="weight.html" class="tab">Weight</a>
+        <a href="#" class="tab active">Temperature</a>
+      </div>
+
+      <form
+        onsubmit="convert(event,'temperature')"
+        style="display: block"
+        id="form-container"
+      >
+        <div class="input-group">
+          <label for="value">Enter the temperature to convert</label>
+          <input id="value" type="number" min="1" />
+        </div>
+
+        <div class="input-group">
+          <label for="from">Unit to Convert from</label>
+          <select id="from">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="to">Unit to Convert to</label>
+          <select id="to">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="button-container">
+        <button type="submit">Convert</button>
+      </div>
+
+      <div id="result-container" style="display: none">
+        <p>Result of your calculation</p>
+        <h2 id="result-text" style="font-weight: bold"></h2>
+        <button onclick="reset()">Reset</button>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Unit Converter</h2>
+      <div class="tabs">
+        <a href="#" class="tab active">Length</a>
+        <a href="weight.html" class="tab">Weight</a>
+        <a href="temperature.html" class="tab">Temperature</a>
+      </div>
+
+      <form
+        onsubmit="convert(event,'length')"
+        style="display: block"
+        id="form-container"
+      >
+        <div class="input-group">
+          <label for="value">Enter the length to convert</label>
+          <input id="value" type="number" min="0" />
+        </div>
+
+        <div class="input-group">
+          <label for="from">Unit to Convert from</label>
+          <select id="from">
+            <option value="centimeter">Centimeter</option>
+            <option value="millimeter">Millimeter</option>
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="inch">Inch</option>
+            <option value="foot">Foot</option>
+            <option value="yard">Yard</option>
+            <option value="mile">Mile</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="to">Unit to Convert to</label>
+          <select id="to">
+            <option value="millimeter">Millimeter</option>
+            <option value="centimeter">Centimeter</option>
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="inch">Inch</option>
+            <option value="foot">Foot</option>
+            <option value="yard">Yard</option>
+            <option value="mile">Mile</option>
+          </select>
+        </div>
+
+        <div class="button-container">
+          <button type="submit">Convert</button>
+        </div>
+      </form>
+
+      <div id="result-container" style="display: none">
+        <p>Result of your calculation</p>
+        <h2 id="result-text" style="font-weight: bold"></h2>
+        <button onclick="reset()">Reset</button>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>
